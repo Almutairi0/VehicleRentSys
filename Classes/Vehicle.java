@@ -15,14 +15,21 @@ public abstract class Vehicle {
         this.rentalStatus = rentalStatus;
         this.rentalRate = rentalRate;
     }
-    public void rent(){
+    public void rent(String vehicleId){
+        if(rentalStatus){
+            rentalStatus = false;
+            System.out.println("The vehicle has been rented.");
+        } else {
+            System.out.println("The vehicle is already rented and not available.");
+        }
+    }
+    public void returnVehicle(String vehicleId){
+            rentalStatus = false;
 
     }
-    public void returnVehicle(){
-
-    }
-    public void calculateRentalCost(){
-
+    public double calculateRentalCost(){
+        rentalRate = 125;
+        return rentalRate;
     }
     public String getMake() {
         return make;
